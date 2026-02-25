@@ -1,0 +1,118 @@
+.features {
+  background-color: var(--clr-white);
+}
+
+.features__grid {
+  display: flex;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: flex-start;
+}
+
+/* Left Column - Text */
+.features__text-col {
+  flex: 1 1 50%;
+}
+
+.features__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--ff-body);
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-weight: 600;
+  color: var(--clr-green-mid);
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.features__label-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(1.1rem, 1.5vw, 1.3rem);
+  height: clamp(1.1rem, 1.5vw, 1.3rem);
+  background-color: var(--clr-green-mid);
+  color: var(--clr-white);
+  border-radius: 50%;
+  font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.features__description {
+  font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+  color: var(--clr-text-light);
+  line-height: 1.7;
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.features__bullets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.features__bullet {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.features__bullet-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: var(--clr-green-mid);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.features__bullet-text {
+  font-size: clamp(0.8rem, 1.05vw, 0.9rem);
+  font-weight: 500;
+  color: var(--clr-text);
+}
+
+.features__cta {
+  display: inline-flex;
+}
+
+/* Right Column - Images */
+.features__images-col {
+  flex: 1 1 50%;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.features__image-wrapper {
+  flex: 1 1 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.features__image {
+  width: 100%;
+  height: min(25rem, 45vw);
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.features__image-wrapper:hover .features__image {
+  transform: scale(1.03);
+}
+
+@media (max-width: 48rem) {
+  .features__grid {
+    flex-direction: column;
+  }
+
+  .features__text-col,
+  .features__images-col {
+    width: 100%;
+  }
+}
+
+@media (max-width: 30rem) {
+  .features__images-col {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,155 @@
+/* ===== CSS Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #2d2d2d;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+/* ===== CSS Custom Properties ===== */
+:root {
+  /* Colors */
+  --clr-green-dark: #1a3c2a;
+  --clr-green-mid: #2d6a4f;
+  --clr-green-light: #40916c;
+  --clr-yellow: #e8c840;
+  --clr-yellow-hover: #d4b535;
+  --clr-cream: #f5f0e8;
+  --clr-white: #ffffff;
+  --clr-text: #2d2d2d;
+  --clr-text-light: #6b6b6b;
+  --clr-bg-light: #f9f7f3;
+
+  /* Typography */
+  --ff-heading: 'Outfit', sans-serif;
+  --ff-body: 'Inter', sans-serif;
+
+  /* Section Spacing */
+  --section-py: clamp(3rem, 6vw, 7rem);
+  --section-px: clamp(1rem, 5vw, 8rem);
+  --container-max: min(75rem, 90%);
+}
+
+/* ===== Global Utilities ===== */
+.section-container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-block: var(--section-py);
+  padding-inline: var(--section-px);
+}
+
+.section-label {
+  font-family: var(--ff-body);
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--clr-green-mid);
+  margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.section-heading {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--clr-green-dark);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.section-heading--white {
+  color: var(--clr-white);
+}
+
+.section-heading--center {
+  text-align: center;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--ff-body);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 600;
+  padding: clamp(0.7rem, 1.2vw, 1rem) clamp(1.5rem, 2.5vw, 2rem);
+  border-radius: 0.5rem;
+  background-color: var(--clr-yellow);
+  color: var(--clr-green-dark);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-yellow-hover);
+  transform: translateY(-0.125rem);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--ff-body);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 600;
+  padding: clamp(0.7rem, 1.2vw, 1rem) clamp(1.5rem, 2.5vw, 2rem);
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--clr-white);
+  border: 0.125rem solid var(--clr-white);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-0.125rem);
+}

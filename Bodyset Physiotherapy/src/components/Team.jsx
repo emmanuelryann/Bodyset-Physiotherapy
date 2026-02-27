@@ -64,7 +64,7 @@ const Team = () => {
 
   return (
     <section className="team" id="team">
-      <div className="team__container section-container">
+      <div className="team__container section-container reveal">
         
         <div className="team__header-row">
           <div className="team__header-text">

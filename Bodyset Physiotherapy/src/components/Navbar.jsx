@@ -67,9 +67,9 @@ const Navbar = () => {
           </ul>
 
           <a
-            href="#about"
-            className="navbar__cta btn-primary"
-            onClick={(e) => handleNavClick(e, 'about')}
+            href="#contact"
+            className="btn-primary"
+            onClick={(e) => handleNavClick(e, 'contact')}
           >
             Book Appointment
           </a>
@@ -111,9 +111,9 @@ const Navbar = () => {
           ))}
         </ul>
         <a
-          href="#about"
+          href="#contact"
           className="navbar__sidebar-cta btn-primary"
-          onClick={(e) => handleNavClick(e, 'about')}
+          onClick={(e) => handleNavClick(e, 'contact')}
         >
           Book Appointment
         </a>

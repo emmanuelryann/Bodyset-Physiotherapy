@@ -13,7 +13,7 @@
 }
 
 .process__image-wrapper {
-  border-radius: 1rem;
+  border-radius: .5rem;
   overflow: hidden;
   height: 100%;
 }
@@ -37,6 +37,9 @@
   font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+  background-color: #2d6a4f80;
+  padding: clamp(0.2rem, 0.4vw, 0.4rem) clamp(0.6rem, 1vw, 0.85rem);
+  border-radius: 2rem;
 }
 
 .process__label-icon {
@@ -66,18 +69,18 @@
 
 .process__step {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: clamp(1.25rem, 2vw, 1.5rem);
-  border-radius: 0.75rem;
+  /* background-color: rgba(255, 255, 255, 0.05); */
+  padding: clamp(1rem, .5vw, 1.5rem) clamp(1rem, 1.5vw, 1.5rem);
+  border-radius: 0.5rem;
   border: 0.0625rem solid rgba(255, 255, 255, 0.08);
   transition: background-color 0.3s ease;
 }
 
-.process__step:hover {
+/* .process__step:hover {
   background-color: rgba(255, 255, 255, 0.1);
-}
+} */
 
 /* Base styles for inactive (green) steps */
 .process__step-icon-wrapper {
@@ -87,7 +90,7 @@
   justify-content: center;
   width: clamp(2.5rem, 4vw, 3rem);
   height: clamp(2.5rem, 4vw, 3rem);
-  background-color: var(--clr-green-light);
+  background-color: var(--clr-green-mid);
   border-radius: 0.5rem;
 }
 
@@ -112,7 +115,7 @@
 }
 
 /* Active style (white box) */
-.process__step--active {
+/* .process__step--active {
   background-color: var(--clr-white);
   border-color: var(--clr-white);
 }
@@ -131,7 +134,7 @@
 
 .process__step--active .process__step-text {
   color: var(--clr-text-light);
-}
+} */
 
 @media (max-width: 60rem) {
   .process__grid {

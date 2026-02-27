@@ -11,7 +11,7 @@ const Testimonials = () => {
       text: "I had been living with chronic neck & shoulder pain for years. I tried everything medications, massages, even injections — but nothing gave me lasting relief. When I found this clinic, I was honestly skeptical. But from the very first session, I felt something different.",
       name: 'Sheldon Jackson',
       role: 'Chronic Back Pain',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
+      image: 'https://images.unsplash.com/photo-1702677852950-c25314af0149?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       rating: 5,
     },
     {
@@ -58,12 +58,12 @@ const Testimonials = () => {
 
   return (
     <section className="testimonials" id="testimonials">
-      <div className="testimonials__container section-container">
+      <div className="testimonials__container section-container reveal">
         
         <div className="testimonials__header">
           <span className="testimonials__label">
             <span className="testimonials__label-icon"><i className="fa-solid fa-leaf"></i></span>
-            Testimonial
+            Testimonials
           </span>
           <h2 className="section-heading section-heading--center">
             What Our Patients Say

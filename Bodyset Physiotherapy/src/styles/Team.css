@@ -5,7 +5,7 @@
 .team__header-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
@@ -22,7 +22,7 @@
   font-weight: 600;
   color: var(--clr-green-mid);
   margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
-  background-color: rgba(64, 145, 108, 0.1);
+  background-color: var(--clr-green-very-light);
   padding: clamp(0.2rem, 0.4vw, 0.4rem) clamp(0.6rem, 1vw, 0.85rem);
   border-radius: 2rem;
 }
@@ -64,10 +64,19 @@
   background-color: var(--clr-yellow-hover);
 }
 
+.team__nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--clr-bg-light);
+  color: var(--clr-text-light);
+}
+
 /* Carousel Track */
 .team__track {
+  --visible-cards: 4;
+  --gap: 1.5rem;
   display: flex;
-  gap: 1.5rem;
+  gap: var(--gap);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -81,10 +90,10 @@
 }
 
 .team__card {
-  flex: 0 0 clamp(14rem, 20vw, 18rem);
+  flex: 0 0 calc((100% - (var(--gap) * (var(--visible-cards) - 1))) / var(--visible-cards));
   scroll-snap-align: start;
   background-color: var(--clr-white);
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.05);
   border: 0.0625rem solid rgba(0, 0, 0, 0.05);
@@ -93,7 +102,7 @@
 
 .team__card-image-wrapper {
   width: 100%;
-  height: min(18rem, 45vw);
+  height: min(23rem, 45vw);
   background-color: var(--clr-bg-light);
 }
 
@@ -106,12 +115,12 @@
 
 .team__card-info {
   position: absolute;
-  bottom: clamp(1rem, 2vw, 1.5rem);
+  bottom: clamp(.5rem, .8vw, 1.5rem);
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
+  width: 91%;
   background-color: var(--clr-white);
-  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.5rem, 1vw, 0.75rem);
+  padding: clamp(0.5rem, .5vw, 0.75rem) clamp(0.5rem, 1vw, 0.75rem);
   border-radius: 0.5rem;
   text-align: center;
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.08);
@@ -130,6 +139,12 @@
   color: var(--clr-text-light);
 }
 
+@media (max-width: 64rem) {
+  .team__track {
+    --visible-cards: 3;
+  }
+}
+
 @media (max-width: 48rem) {
   .team__header-row {
     flex-direction: column;
@@ -137,7 +152,13 @@
     gap: 1.25rem;
   }
   
-  .team__card {
-    flex: 0 0 clamp(14rem, 60vw, 18rem);
+  .team__track {
+    --visible-cards: 2;
+  }
+}
+
+@media (max-width: 30rem) {
+  .team__track {
+    --visible-cards: 1;
   }
 }

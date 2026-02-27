@@ -1,15 +1,15 @@
 .about {
-  background-color: var(--clr-cream);
+  background-color: var(--clr-green-very-light);
 }
 
 .about__grid {
   display: flex;
-  gap: clamp(2rem, 4vw, 4rem);
-  align-items: flex-start;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
 }
 
-/* Left Column */
-.about__left {
+/* Left Column - Text */
+.about__text-col {
   flex: 1 1 50%;
 }
 
@@ -22,6 +22,9 @@
   font-weight: 600;
   color: var(--clr-green-mid);
   margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+  background-color: var(--clr-white);
+  padding: clamp(0.2rem, 0.4vw, 0.4rem) clamp(0.6rem, 1vw, 0.85rem);
+  border-radius: 2rem;
 }
 
 .about__label-icon {
@@ -38,239 +41,81 @@
   flex-shrink: 0;
 }
 
-.about__text {
+.about__description {
   font-size: clamp(0.85rem, 1.1vw, 0.95rem);
   color: var(--clr-text-light);
   line-height: 1.7;
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
-/* Schedule Table */
-.about__schedule {
-  background-color: var(--clr-white);
-  border-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.05);
-}
-
-.about__schedule-header {
+.about__bullets {
   display: flex;
-  justify-content: space-between;
-  padding: clamp(0.8rem, 1.5vw, 1.1rem) clamp(1.25rem, 2vw, 1.75rem);
-  background-color: var(--clr-bg-light);
-  border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
 }
 
-.about__schedule-heading {
-  font-family: var(--ff-heading);
-  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
-  font-weight: 600;
-  color: var(--clr-green-dark);
-}
-
-.about__schedule-row {
-  display: flex;
-  justify-content: space-between;
-  padding: clamp(0.7rem, 1.2vw, 0.9rem) clamp(1.25rem, 2vw, 1.75rem);
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
-  color: var(--clr-text-light);
-  border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.04);
-}
-
-.about__schedule-row:last-child {
-  border-bottom: none;
-}
-
-/* Right Column - Form Card */
-.about__right {
-  flex: 1 1 45%;
-}
-
-.about__form-card {
-  background-color: var(--clr-white);
-  border-radius: 1rem;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.07);
-}
-
-.about__form-title {
-  font-family: var(--ff-heading);
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-  font-weight: 700;
-  color: var(--clr-green-dark);
-  margin-bottom: clamp(0.35rem, 0.6vw, 0.5rem);
-  text-align: center;
-}
-
-.about__form-subtitle {
-  font-size: clamp(0.75rem, 0.95vw, 0.85rem);
-  color: var(--clr-text-light);
-  margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
-  text-align: center;
-  line-height: 1.5;
-}
-
-.about__form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.875rem;
-}
-
-.about__form-row {
-  display: flex;
-  gap: 0.875rem;
-}
-
-.about__form-group {
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.about__form-group--time {
-  flex: 1 1 0;
-}
-
-.about__form-label {
-  font-size: clamp(0.75rem, 0.95vw, 0.85rem);
-  font-weight: 500;
-  color: var(--clr-text);
-}
-
-.about__input {
-  width: 100%;
-  padding: clamp(0.6rem, 1vw, 0.8rem) clamp(0.75rem, 1.2vw, 1rem);
-  background-color: var(--clr-bg-light);
-  border-radius: 0.375rem;
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
-  color: var(--clr-text);
-  border: 0.0625rem solid rgba(0, 0, 0, 0.08);
-  transition: border-color 0.3s ease;
-}
-
-.about__input:focus {
-  border-color: var(--clr-green-mid);
-}
-
-.about__input::placeholder {
-  color: var(--clr-text-light);
-}
-
-.about__select {
-  appearance: none;
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%236b6b6b' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right clamp(0.6rem, 1vw, 0.9rem) center;
-  padding-right: clamp(1.75rem, 2.5vw, 2.25rem);
-}
-
-.about__time-row {
-  display: flex;
+.about__bullet {
+  display: inline-flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
-.about__select--small {
-  flex: 1 1 0;
-}
-
-.about__submit {
-  width: 100%;
-  margin-top: clamp(0.25rem, 0.5vw, 0.5rem);
-}
-
-/* Contact Cards */
-.about__contact-cards {
+.about__bullet-dot {
+  width: 1rem;
+  height: 1rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  margin-top: clamp(2rem, 4vw, 3rem);
-}
-
-.about__contact-card {
-  flex: 1 1 calc(33.333% - 1.25rem);
-  min-width: min(15rem, 100%);
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 2vw, 1.75rem);
-  border-radius: 0.75rem;
-  transition: transform 0.3s ease;
-}
-
-.about__contact-card:hover {
-  transform: translateY(-0.125rem);
-}
-
-.about__contact-card--dark {
-  background-color: var(--clr-green-dark);
-}
-
-.about__contact-card--green {
-  background-color: var(--clr-green-mid);
-}
-
-.about__contact-icon-wrapper {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  width: clamp(2.75rem, 4vw, 3.25rem);
-  height: clamp(2.75rem, 4vw, 3.25rem);
+  align-items: center;
+  color: var(--clr-white);
+  background-color: var(--clr-green-mid);
   border-radius: 50%;
   flex-shrink: 0;
 }
 
-.about__contact-icon-wrapper--yellow {
-  background-color: var(--clr-yellow);
+.about__bullet-text {
+  font-size: clamp(0.8rem, 1.05vw, 0.9rem);
+  font-weight: 500;
+  color: var(--clr-text);
 }
 
-.about__contact-icon-wrapper--white {
-  background-color: var(--clr-white);
+/* Right Column - Images */
+.about__images-col {
+  flex: 1 1 50%;
+  display: flex;
+  gap: 1.25rem;
 }
 
-.about__contact-icon {
-  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+.about__image-wrapper {
+  flex: 1 1 0;
+  border-radius: .5rem;
+  overflow: hidden;
 }
 
-.about__contact-title {
-  font-family: var(--ff-heading);
-  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
-  font-weight: 600;
-  color: var(--clr-white);
-  margin-bottom: clamp(0.1rem, 0.2vw, 0.2rem);
+.about__image {
+  width: 100%;
+  height: min(25rem, 45vw);
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.about__contact-title--white {
-  color: var(--clr-white);
+.about__image-wrapper:hover .about__image {
+  transform: scale(1.03);
 }
 
-.about__contact-detail {
-  font-size: clamp(0.75rem, 0.95vw, 0.85rem);
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.4;
-}
-
-.about__contact-detail--white {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* Responsive */
 @media (max-width: 48rem) {
   .about__grid {
     flex-direction: column;
   }
 
-  .about__left,
-  .about__right {
+  .about__text-col,
+  .about__images-col {
     width: 100%;
   }
+}
 
-  .about__form-row {
+@media (max-width: 30rem) {
+  .about__images-col {
     flex-direction: column;
-  }
-
-  .about__contact-card {
-    flex-basis: 100%;
   }
 }

@@ -1,5 +1,5 @@
 .testimonials {
-  background-color: var(--clr-cream);
+  background-color: var(--clr-green-very-light);
 }
 
 .testimonials__header {
@@ -12,7 +12,7 @@
   align-items: center;
   gap: 0.4rem;
   font-family: var(--ff-body);
-  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
   font-weight: 600;
   color: var(--clr-green-mid);
   margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
@@ -45,18 +45,23 @@
   scroll-snap-align: start;
   display: flex;
   background-color: var(--clr-white);
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.05);
   border: 0.0625rem solid rgba(0, 0, 0, 0.03);
+  min-height: clamp(22rem, 45vh, 26rem);
 }
 
 .testimonials__card-image-wrapper {
   flex: 1 1 40%;
   max-width: 40%;
+  position: relative;
 }
 
 .testimonials__card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -64,16 +69,17 @@
 
 .testimonials__card-content {
   flex: 1 1 60%;
-  padding: clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3.5vw, 3rem);
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .testimonials__stars-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
 .testimonials__stars {
@@ -95,8 +101,7 @@
   font-size: clamp(0.85rem, 1.1vw, 1rem);
   color: var(--clr-text-light);
   line-height: 1.8;
-  margin-bottom: auto; /* Pushes author row to bottom */
-  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 /* Author and Nav Row */
@@ -162,14 +167,20 @@
   background-color: var(--clr-yellow-hover);
 }
 
+.testimonials__nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--clr-bg-light);
+  color: var(--clr-text-light);
+}
+
 @media (max-width: 48rem) {
   .testimonials__card {
     flex-direction: column;
   }
 
   .testimonials__card-image-wrapper {
-    max-width: 100%;
-    height: clamp(15rem, 40vw, 20rem);
+    display: none;
   }
 
   .testimonials__card-content {

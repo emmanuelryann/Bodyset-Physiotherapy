@@ -12,10 +12,11 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
   color: #2d2d2d;
   line-height: 1.6;
   overflow-x: hidden;
+  /* -webkit-font-smoothing: antialiased; */
 }
 
 body.no-scroll {
@@ -59,23 +60,25 @@ select {
   /* Colors */
   --clr-green-dark: #1a3c2a;
   --clr-green-mid: #2d6a4f;
-  --clr-green-light: #40916c;
+  --clr-green-light: #92aea1;
+  --clr-green-very-light: #e4ece7;
+  --clr-lemon: #a2e39c;
   --clr-yellow: #e8c840;
   --clr-yellow-hover: #d4b535;
   --clr-cream: #f5f0e8;
   --clr-white: #ffffff;
   --clr-text: #2d2d2d;
-  --clr-text-light: #6b6b6b;
+  --clr-text-light: #414141;
   --clr-bg-light: #f9f7f3;
 
   /* Typography */
   --ff-heading: 'Outfit', sans-serif;
-  --ff-body: 'Inter', sans-serif;
+  --ff-body: 'DM Sans', 'Segoe UI', sans-serif;
 
   /* Section Spacing */
   --section-py: clamp(3rem, 6vw, 7rem);
-  --section-px: clamp(1rem, 5vw, 8rem);
-  --container-max: min(75rem, 90%);
+  --section-px: clamp(1rem, 4vw, 8rem);
+  --container-max: min(75rem, 100%);
 }
 
 /* ===== Global Utilities ===== */
@@ -86,19 +89,9 @@ select {
   padding-inline: var(--section-px);
 }
 
-.section-label {
-  font-family: var(--ff-body);
-  font-size: clamp(0.75rem, 1vw, 0.9rem);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  color: var(--clr-green-mid);
-  margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
-}
-
 .section-heading {
   font-family: var(--ff-heading);
-  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-size: clamp(1.75rem, 3vw, 3rem);
   font-weight: 700;
   line-height: 1.2;
   color: var(--clr-green-dark);
@@ -119,10 +112,11 @@ select {
   justify-content: center;
   gap: 0.5rem;
   font-family: var(--ff-body);
-  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  /* font-size: clamp(0.85rem, 1.2vw, 1rem); */
   font-weight: 600;
-  padding: clamp(0.7rem, 1.2vw, 1rem) clamp(1.5rem, 2.5vw, 2rem);
-  border-radius: 0.5rem;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  padding: clamp(0.5rem, 0.8vw, 0.75rem) clamp(1rem, 1.8vw, 1.5rem);
+  border-radius: 0.4rem;
   background-color: var(--clr-yellow);
   color: var(--clr-green-dark);
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -152,4 +146,16 @@ select {
 .btn-outline:hover {
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-0.125rem);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: opacity 1.7s ease-out, transform 1.7s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -35,11 +35,11 @@
   margin-bottom: 0;
 }
 
-.blog__view-more {
+/* .blog__view-more {
   padding: clamp(0.6rem, 1vw, 0.8rem) clamp(1.2rem, 2vw, 1.8rem);
   font-size: clamp(0.8rem, 1vw, 0.95rem);
   border-radius: 0.5rem;
-}
+} */
 
 .blog__grid {
   display: flex;
@@ -51,21 +51,21 @@
 .blog__card {
   flex: 1 1 calc(33.333% - 1.5rem);
   min-width: min(18rem, 100%);
-  background-color: transparent; /* No background */
+  background-color: transparent;
   overflow: hidden;
-  cursor: pointer; /* Pointer on full card */
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
 .blog__card:hover {
-  transform: translateY(-0.25rem); /* Subtle lift for the whole card */
+  transform: translateY(-0.25rem);
 }
 
 .blog__card-image-wrapper {
   position: relative;
   width: 100%;
   height: min(18rem, 45vw);
-  border-radius: 0.75rem; /* Rounded corners on image */
+  border-radius: 0.5rem;
   overflow: hidden;
   margin-bottom: clamp(1rem, 1.5vw, 1.25rem);
 }
@@ -78,7 +78,7 @@
 }
 
 .blog__card:hover .blog__card-image {
-  transform: scale(1.05); /* Zoom image on hover */
+  transform: scale(1.05);
 }
 
 .blog__card-content {
@@ -130,7 +130,7 @@
 }
 
 .blog__card:hover .blog__card-link {
-  color: var(--clr-green-mid); /* Turns green on hover just like screenshot hover state */
+  color: var(--clr-green-mid);
 }
 
 .blog__card-link-icon {
@@ -140,7 +140,7 @@
 }
 
 .blog__card:hover .blog__card-link-icon {
-  transform: rotate(-45deg) translate(2px, -2px); /* Animate floating up/right slightly */
+  transform: rotate(-45deg) translate(2px, -2px);
 }
 
 @media (max-width: 48rem) {

@@ -1,4 +1,5 @@
 import '../styles/Process.css'
+import image from '../assets/Physiotherapist-process.jpg'
 
 const Process = () => {
   const steps = [
@@ -30,12 +31,12 @@ const Process = () => {
 
   return (
     <section className="process" id="process">
-      <div className="process__container section-container">
+      <div className="process__container section-container reveal">
         <div className="process__grid">
           <div className="process__image-col">
             <div className="process__image-wrapper">
               <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80"
+                src={image}
                 alt="Therapist guiding patient through recovery"
                 className="process__image"
               />

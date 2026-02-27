@@ -33,9 +33,9 @@ const Hero = () => {
         </svg>
       </div>
 
-      <div className="hero__content">
+      <div className="hero__content reveal">
         <span className="hero__label">
-          <span className="hero__label-icon">✓</span>
+          <span className="hero__label-icon"><i className="fa-solid fa-leaf"></i></span>
           Feel Better, Move Freely, Live Fully
         </span>
         <h1 className="hero__heading">
@@ -43,18 +43,18 @@ const Hero = () => {
         </h1>
         <div className="hero__actions">
           <a
-            href="#about"
+            href="#contact"
             className="btn-primary"
-            onClick={(e) => handleClick(e, 'about')}
+            onClick={(e) => handleClick(e, 'contact')}
           >
-            Book An Appointment
+            Book an Appointment
           </a>
           <a
             href="#services"
             className="hero__btn-secondary"
             onClick={(e) => handleClick(e, 'services')}
           >
-            Schedule A Session
+            Schedule a Session
           </a>
         </div>
       </div>

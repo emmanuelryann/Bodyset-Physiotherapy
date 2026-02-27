@@ -24,7 +24,7 @@ const Blog = () => {
 
   return (
     <section className="blog" id="blog">
-      <div className="blog__container section-container">
+      <div className="blog__container section-container reveal">
         <div className="blog__header">
           <div className="blog__header-text">
             <span className="blog__label">
@@ -36,7 +36,7 @@ const Blog = () => {
             </h2>
           </div>
           <a href="#blog" className="btn-primary blog__view-more">
-            View More Blog
+            View More Articles
           </a>
         </div>
         <div className="blog__grid">

@@ -4,7 +4,7 @@ const CTA = () => {
   return (
     <section className="cta" id="cta">
       <div className="cta__bg-overlay"></div>
-      <div className="cta__container section-container">
+      <div className="cta__container reveal">
         <div className="cta__content">
           <h2 className="section-heading cta__heading">
             Ready To Take The First Step<br/>Toward A Pain-Free Life?
@@ -21,7 +21,7 @@ const CTA = () => {
                 className="cta__input"
                 required
               />
-              <button type="submit" className="btn-primary cta__button">
+              <button type="submit" className="btn-primary">
                 Subscribe
               </button>
             </div>

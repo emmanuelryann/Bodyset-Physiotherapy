@@ -1,13 +1,21 @@
 .services {
-  background-color: var(--clr-bg-light);
+  background-color: var(--clr-white);
   overflow: hidden;
 }
 
-.services__header {
-  text-align: center;
-  max-width: min(50rem, 100%);
-  margin-inline: auto;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+.services__header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.services__header-text {
+  max-width: min(35rem, 100%);
+}
+
+.services__heading {
+  margin-bottom: 0;
 }
 
 .services__label {
@@ -19,6 +27,9 @@
   font-weight: 600;
   color: var(--clr-green-mid);
   margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+  background-color: var(--clr-green-very-light);
+  padding: clamp(0.2rem, 0.4vw, 0.4rem) clamp(0.6rem, 1vw, 0.85rem);
+  border-radius: 2rem;
 }
 
 .services__label-icon {
@@ -35,39 +46,93 @@
   flex-shrink: 0;
 }
 
+.services__nav {
+  display: flex;
+  gap: 0.6rem;
+  padding-bottom: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.services__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(2rem, 3vw, 2.5rem);
+  height: clamp(2rem, 3vw, 2.5rem);
+  border-radius: 50%;
+  background-color: var(--clr-bg-light);
+  color: var(--clr-text-light);
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  transition: all 0.3s ease;
+}
+
+.services__nav-btn--active {
+  background-color: var(--clr-yellow);
+  color: var(--clr-green-dark);
+}
+
+.services__nav-btn--active:hover {
+  background-color: var(--clr-yellow-hover);
+}
+
+.services__nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--clr-bg-light);
+  color: var(--clr-text-light);
+}
+
 .services__carousel-wrapper {
   position: relative;
   width: 100%;
 }
 
 .services__track {
+  --visible-cards: 3;
+  --gap: 1.5rem;
   display: flex;
-  gap: 1.5rem;
+  gap: var(--gap);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .services__track::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  display: none;
 }
 
 .services__card {
-  flex: 0 0 clamp(16rem, 25vw, 22rem);
+  flex: 0 0 calc((100% - (var(--gap) * (var(--visible-cards) - 1))) / var(--visible-cards));
   scroll-snap-align: start;
   background-color: var(--clr-white);
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.3s ease;
   border: 0.0625rem solid rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.services__card:hover {
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+/* .services__card:hover {
+  transform: translateY(-0.25rem);
+} */
+
+.services__card:hover .services__card-link {
+  color: var(--clr-green-mid);
+}
+
+.services__card:hover .services__card-title {
+  color: var(--clr-green-mid);
+}
+
+.services__card:hover .services__card-image {
+  transform: scale(1.05);
+}
+
+.services__card-link:hover .services__card-link-icon {
+  transform: translateY(-0.1rem) translateX(0.1rem);
 }
 
 .services__card-image-wrapper {
@@ -80,6 +145,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
 .services__card-content {
@@ -117,42 +183,26 @@
   transition: transform 0.3s ease;
 }
 
-.services__card-link:hover {
-  color: var(--clr-green-dark);
-}
-
-.services__card-link:hover .services__card-link-icon {
-  transform: translateY(-0.1rem) translateX(0.1rem);
-}
-
-.services__dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: clamp(0.5rem, 1vw, 1rem);
-}
-
-.services__dot {
-  width: clamp(0.5rem, 0.8vw, 0.65rem);
-  height: clamp(0.5rem, 0.8vw, 0.65rem);
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.services__dot--active {
-  background-color: var(--clr-green-dark);
-  transform: scale(1.2);
+@media (max-width: 64rem) {
+  .services__track {
+    --visible-cards: 2;
+  }
 }
 
 @media (max-width: 48rem) {
-  .services__card {
-    flex: 0 0 clamp(16rem, 75vw, 22rem);
+  .services__header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  
+  .services__track {
+    --visible-cards: 1.5;
   }
 }
 
 @media (max-width: 30rem) {
-  .services__card {
-    flex: 0 0 85vw;
+  .services__track {
+    --visible-cards: 1;
   }
 }

@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import '../styles/Services.css'
 
 const Services = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
   const scrollRef = useRef(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
 
   const services = [
     {
@@ -28,7 +28,7 @@ const Services = () => {
       description: 'Designed for patients with neurological conditions, maximizing independence and movement.',
     },
     {
-      image: 'https://images.unsplash.com/photo-1519823551278-64ac92734314?w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1522898467493-49726bf28798?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'Geriatric Physiotherapy',
       description: 'Gentle and effective treatments tailored for older adults to maintain mobility, balance, and independence.',
     },
@@ -39,75 +39,96 @@ const Services = () => {
     },
   ]
 
-  const totalDots = services.length
-
-  const scrollTo = useCallback((index) => {
+  const checkScrollState = () => {
     if (!scrollRef.current) return
-    const container = scrollRef.current
-    const cardWidth = container.firstElementChild?.offsetWidth || 0
-    const gap = parseFloat(getComputedStyle(container).gap) || 0
+
+    console.log('=== checkScrollState START ===')
+    console.trace('Called from:')
     
-    container.scrollTo({
-      left: index * (cardWidth + gap),
-      behavior: 'smooth'
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
+
+    console.log('Current state:', { canScrollLeft, canScrollRight })
+    console.log('Scroll values:', { scrollLeft, scrollWidth, clientWidth })
+
+    const newCanScrollLeft = scrollLeft > 2
+    const newCanScrollRight = Math.ceil(scrollLeft + clientWidth) < (scrollWidth - 2)
+
+    console.log('Will update?', {
+      leftChanged: newCanScrollLeft !== canScrollLeft,
+      rightChanged: newCanScrollRight !== canScrollRight
     })
-    setActiveIndex(index)
-  }, [])
+
+    setCanScrollLeft(newCanScrollLeft)
+    setCanScrollRight(newCanScrollRight)
+
+    console.log('=== checkScrollState END ===\n')
+    console.log('>>> COMPONENT RENDER <<<', { canScrollLeft, canScrollRight })
+  }
 
   useEffect(() => {
-    if (isPaused) return
+    console.log('!!! useEffect RAN !!!')
 
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => {
-        const nextIndex = (prev + 1) % totalDots
-        scrollTo(nextIndex)
-        return nextIndex
+    checkScrollState()
+    window.addEventListener('resize', checkScrollState)
+    return () => {
+      console.log('!!! useEffect CLEANUP !!!')
+      window.removeEventListener('resize', checkScrollState)
+    }
+  }, []) 
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const container = scrollRef.current
+      const cardWidth = container.firstElementChild?.offsetWidth || 0
+      const gap = parseFloat(getComputedStyle(container).gap) || 0
+      const scrollAmount = cardWidth + gap
+
+      container.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
       })
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [isPaused, totalDots, scrollTo])
-
-  // Update active index based on scroll position
-  const handleScroll = () => {
-    if (!scrollRef.current) return
-    const container = scrollRef.current
-    const scrollPosition = container.scrollLeft
-    const cardWidth = container.firstElementChild?.offsetWidth || 0
-    const gap = parseFloat(getComputedStyle(container).gap) || 0
-    const itemWidth = cardWidth + gap
-    
-    // Calculate which item is mostly in view
-    const newIndex = Math.round(scrollPosition / itemWidth)
-    if (newIndex >= 0 && newIndex < totalDots && newIndex !== activeIndex) {
-      setActiveIndex(newIndex)
     }
   }
 
   return (
     <section className="services" id="services">
-      <div className="services__container section-container">
-        <div className="services__header">
-          <span className="services__label">
-            <span className="services__label-icon"><i className="fa-solid fa-leaf"></i></span>
-            Our Services
-          </span>
-          <h2 className="section-heading">
-            Therapy That Adapts To You, Not<br />The Other Way Around
-          </h2>
+      <div className="services__container section-container reveal">
+        <div className="services__header-row">
+          <div className="services__header-text">
+            <span className="services__label">
+              <span className="services__label-icon"><i className="fa-solid fa-leaf"></i></span>
+              Our Services
+            </span>
+            <h2 className="section-heading services__heading">
+              Therapy That Adapts To You, Not The Other Way Around
+            </h2>
+          </div>
+          
+          <div className="services__nav">
+            <button 
+              className={`services__nav-btn ${canScrollLeft ? 'services__nav-btn--active' : ''}`}
+              onClick={() => scroll('left')}
+              disabled={!canScrollLeft}
+              aria-label="Previous service"
+            >
+              <i className="fa-solid fa-chevron-left"></i>
+            </button>
+            <button 
+              className={`services__nav-btn ${canScrollRight ? 'services__nav-btn--active' : ''}`}
+              onClick={() => scroll('right')}
+              disabled={!canScrollRight}
+              aria-label="Next service"
+            >
+              <i className="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
 
-        <div 
-          className="services__carousel-wrapper"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={() => setIsPaused(true)}
-          onTouchEnd={() => setIsPaused(false)}
-        >
+        <div className="services__carousel-wrapper">
           <div 
             className="services__track" 
             ref={scrollRef}
-            onScroll={handleScroll}
+            onScroll={checkScrollState}
           >
             {services.map((service, index) => (
               <div className="services__card" key={index}>
@@ -130,21 +151,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="services__dots">
-          {Array.from({ length: totalDots }).map((_, idx) => (
-            <button
-              key={idx}
-              className={`services__dot ${idx === activeIndex ? 'services__dot--active' : ''}`}
-              onClick={() => {
-                setIsPaused(true)
-                scrollTo(idx)
-                // Resume after a delay
-                setTimeout(() => setIsPaused(false), 5000)
-              }}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
-        </div>
+
       </div>
     </section>
   )

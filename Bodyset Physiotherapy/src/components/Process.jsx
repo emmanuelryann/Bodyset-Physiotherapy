@@ -1,5 +1,5 @@
 import '../styles/Process.css'
-import image from '../assets/Physiotherapist-process.jpg'
+import image from '../assets/physiotherapist-process.jpg'
 
 const Process = () => {
   const steps = [

@@ -28,10 +28,15 @@ const Navbar = () => {
   const handleNavClick = (e, targetId) => {
     e.preventDefault()
     closeSidebar()
-    const target = document.getElementById(targetId)
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' })
-    }
+    
+    // Small delay to allow 'no-scroll' class to be removed from body 
+    // before the browser attempts to calculate scroll position
+    setTimeout(() => {
+      const target = document.getElementById(targetId)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 100)
   }
 
   const navLinks = [

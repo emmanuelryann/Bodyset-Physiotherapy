@@ -49,14 +49,14 @@ const About = () => {
           <div className="about__images-col">
             <div className="about__image-wrapper">
               <img
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80"
+                src="https://images.pexels.com/photos/20860586/pexels-photo-20860586.jpeg"
                 alt="Physiotherapist treating patient's back"
                 className="about__image"
               />
             </div>
             <div className="about__image-wrapper">
               <img
-                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80"
+                src="https://images.pexels.com/photos/4506106/pexels-photo-4506106.jpeg"
                 alt="Physical therapy rehabilitation session"
                 className="about__image"
               />

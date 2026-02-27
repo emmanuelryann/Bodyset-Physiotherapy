@@ -16,12 +16,13 @@ const CTA = () => {
           <form className="cta__form" onSubmit={(e) => e.preventDefault()}>
             <div className="cta__input-wrapper">
               <input 
-                type="email" 
+                type="email"
+                name='email'
                 placeholder="Email Address" 
                 className="cta__input"
                 required
               />
-              <button type="submit" className="btn-primary">
+              <button type="submit" className="btn-primary cta-subscribe-btn">
                 Subscribe
               </button>
             </div>

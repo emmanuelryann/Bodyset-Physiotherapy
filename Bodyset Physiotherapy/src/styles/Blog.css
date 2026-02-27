@@ -1,5 +1,5 @@
 .blog {
-  background-color: var(--clr-bg-light);
+  background-color: var(--clr-white);
 }
 
 .blog__header {
@@ -18,11 +18,11 @@
   align-items: center;
   gap: 0.4rem;
   font-family: var(--ff-body);
-  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-size: var(--fs-body);
   font-weight: 600;
-  color: var(--clr-green-mid);
+  color: var(--clr-blue-mid);
   margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
-  background-color: rgba(64, 145, 108, 0.1);
+  background-color: rgba(53, 114, 176, 0.1);
   padding: clamp(0.2rem, 0.4vw, 0.4rem) clamp(0.6rem, 1vw, 0.85rem);
   border-radius: 2rem;
 }
@@ -57,8 +57,10 @@
   transition: transform 0.3s ease;
 }
 
-.blog__card:hover {
-  transform: translateY(-0.25rem);
+@media (hover: hover) {
+  .blog__card:hover {
+    transform: translateY(-0.25rem);
+  }
 }
 
 .blog__card-image-wrapper {
@@ -77,8 +79,10 @@
   transition: transform 0.4s ease;
 }
 
-.blog__card:hover .blog__card-image {
-  transform: scale(1.05);
+@media (hover: hover) {
+  .blog__card:hover .blog__card-image {
+    transform: scale(1.05);
+  }
 }
 
 .blog__card-content {
@@ -97,7 +101,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+  font-size: var(--fs-body);
   color: var(--clr-text-light);
 }
 
@@ -115,22 +119,26 @@
   transition: color 0.3s ease;
 }
 
-.blog__card:hover .blog__card-title {
-  color: var(--clr-green-mid);
+@media (hover: hover) {
+  .blog__card:hover .blog__card-title {
+    color: var(--clr-blue-mid);
+  }
 }
 
 .blog__card-link {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: clamp(0.85rem, 1vw, 0.9rem);
+  font-size: var(--fs-body);
   font-weight: 600;
   color: var(--clr-text);
   transition: color 0.3s ease;
 }
 
-.blog__card:hover .blog__card-link {
-  color: var(--clr-green-mid);
+@media (hover: hover) {
+  .blog__card:hover .blog__card-link {
+    color: var(--clr-blue-mid);
+  }
 }
 
 .blog__card-link-icon {
@@ -139,8 +147,10 @@
   transition: transform 0.3s ease;
 }
 
-.blog__card:hover .blog__card-link-icon {
-  transform: rotate(-45deg) translate(2px, -2px);
+@media (hover: hover) {
+  .blog__card:hover .blog__card-link-icon {
+    transform: rotate(-45deg) translate(2px, -2px);
+  }
 }
 
 @media (max-width: 48rem) {

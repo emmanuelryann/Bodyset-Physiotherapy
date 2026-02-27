@@ -1,5 +1,5 @@
 .testimonials {
-  background-color: var(--clr-green-very-light);
+  background-color: var(--clr-blue-very-light);
 }
 
 .testimonials__header {
@@ -12,11 +12,11 @@
   align-items: center;
   gap: 0.4rem;
   font-family: var(--ff-body);
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-size: var(--fs-body);
   font-weight: 600;
-  color: var(--clr-green-mid);
+  color: var(--clr-blue-mid);
   margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
-  background-color: rgba(64, 145, 108, 0.1);
+  background-color: var(--clr-blue-soft);
   padding: clamp(0.2rem, 0.4vw, 0.4rem) clamp(0.6rem, 1vw, 0.85rem);
   border-radius: 2rem;
 }
@@ -94,11 +94,11 @@
 
 .testimonials__quote-icon {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
-  color: var(--clr-green-dark);
+  color: var(--clr-blue-dark);
 }
 
 .testimonials__text {
-  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-size: var(--fs-body);
   color: var(--clr-text-light);
   line-height: 1.8;
   margin-bottom: clamp(1.5rem, 2.5vw, 2rem);
@@ -135,7 +135,7 @@
 }
 
 .testimonials__author-role {
-  font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+  font-size: var(--fs-body);
   color: var(--clr-text-light);
 }
 
@@ -159,12 +159,14 @@
 }
 
 .testimonials__nav-btn--active {
-  background-color: var(--clr-yellow);
-  color: var(--clr-green-dark);
+  background-color: var(--clr-blue-mid);
+  color: var(--clr-white);
 }
 
-.testimonials__nav-btn--active:hover {
-  background-color: var(--clr-yellow-hover);
+@media (hover: hover) {
+  .testimonials__nav-btn--active:hover {
+    background-color: var(--clr-blue-mid);
+  }
 }
 
 .testimonials__nav-btn:disabled {

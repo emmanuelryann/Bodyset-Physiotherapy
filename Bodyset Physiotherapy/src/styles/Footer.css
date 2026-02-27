@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--clr-green-very-light);
+  background-color: var(--clr-blue-very-light);
   color: var(--clr-text);
   /* padding-top: clamp(4rem, 8vw, 6rem); */
 }
@@ -27,16 +27,16 @@
   font-family: var(--ff-heading);
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 700;
-  color: var(--clr-green-dark);
+  color: var(--clr-blue-dark);
   margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
 .footer__logo-icon {
-  color: var(--clr-green-mid);
+  color: var(--clr-blue-mid);
 }
 
 .footer__tagline {
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  font-size: var(--fs-body);
   color: var(--clr-text-light);
   line-height: 1.7;
   margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
@@ -62,12 +62,14 @@
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
 }
 
-.footer__social-link:hover {
-  background-color: var(--clr-yellow);
-  color: var(--clr-green-dark);
+@media (hover: hover) {
+  .footer__social-link:hover {
+    background-color: var(--clr-blue-mid);
+    color: var(--clr-white);
+    transform: scale(0.95);
+  }
 }
 
-/* Col Titles */
 .footer__col-title {
   font-family: var(--ff-heading);
   font-size: clamp(1.05rem, 1.3vw, 1.15rem);
@@ -78,7 +80,7 @@
 
 /* Col 2: Hours Table */
 .footer__hours-table {
-  background-color: var(--clr-green-very-light);
+  background-color: var(--clr-blue-very-light);
   border-radius: 0.5rem;
   padding: clamp(0.75rem, 1.5vw, 1.25rem);
   display: flex;
@@ -118,13 +120,15 @@
 }
 
 .footer__link {
-  font-size: clamp(0.85rem, 1vw, 0.9rem);
+  font-size: var(--fs-body);
   color: var(--clr-text-light);
   transition: color 0.3s ease;
 }
 
-.footer__link:hover {
-  color: var(--clr-yellow);
+@media (hover: hover) {
+  .footer__link:hover {
+    color: var(--clr-blue-mid);
+  }
 }
 
 /* Col 4: Contact */
@@ -138,7 +142,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: clamp(0.85rem, 1vw, 0.9rem);
+  font-size: var(--fs-body);
   color: var(--clr-text-light);
 }
 
@@ -156,7 +160,7 @@
 }
 
 .footer__copyright {
-  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  font-size: var(--fs-body);
   color: var(--clr-text-light);
 }
 
@@ -164,7 +168,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  font-size: var(--fs-body);
   color: var(--clr-text-light);
 }
 
@@ -172,15 +176,16 @@
   transition: color 0.3s ease;
 }
 
-.footer__legal-link:hover {
-  color: var(--clr-yellow);
+@media (hover: hover) {
+  .footer__legal-link:hover {
+    color: var(--clr-blue-mid);
+  }
 }
 
 .footer__legal-divider {
   color: rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 64rem) {
   .footer__grid {
     grid-template-columns: 1fr 1fr;

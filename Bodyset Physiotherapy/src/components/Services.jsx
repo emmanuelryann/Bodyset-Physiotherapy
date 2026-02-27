@@ -41,37 +41,19 @@ const Services = () => {
 
   const checkScrollState = () => {
     if (!scrollRef.current) return
-
-    console.log('=== checkScrollState START ===')
-    console.trace('Called from:')
     
     const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
-
-    console.log('Current state:', { canScrollLeft, canScrollRight })
-    console.log('Scroll values:', { scrollLeft, scrollWidth, clientWidth })
-
     const newCanScrollLeft = scrollLeft > 2
     const newCanScrollRight = Math.ceil(scrollLeft + clientWidth) < (scrollWidth - 2)
 
-    console.log('Will update?', {
-      leftChanged: newCanScrollLeft !== canScrollLeft,
-      rightChanged: newCanScrollRight !== canScrollRight
-    })
-
     setCanScrollLeft(newCanScrollLeft)
     setCanScrollRight(newCanScrollRight)
-
-    console.log('=== checkScrollState END ===\n')
-    console.log('>>> COMPONENT RENDER <<<', { canScrollLeft, canScrollRight })
   }
 
   useEffect(() => {
-    console.log('!!! useEffect RAN !!!')
-
     checkScrollState()
     window.addEventListener('resize', checkScrollState)
     return () => {
-      console.log('!!! useEffect CLEANUP !!!')
       window.removeEventListener('resize', checkScrollState)
     }
   }, []) 

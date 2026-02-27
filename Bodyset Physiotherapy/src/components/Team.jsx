@@ -8,27 +8,27 @@ const Team = () => {
 
   const members = [
     {
-      image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80',
-      name: 'Dr. James Hall',
+      image: 'https://storage.googleapis.com/waynesco_storage/1113/20/Cindy-Devilliers-scaled.jpg',
+      name: 'Dr. Linda Jones',
       role: 'Physio Specialist',
     },
     {
-      image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80',
+      image: 'https://img1.wsimg.com/isteam/ip/6940172d-0ee1-4d0f-a55c-12af19c19b80/Image008.jpg',
       name: 'Dr. Faisal Ahmed',
       role: 'Founder - CEO',
     },
     {
-      image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80',
+      image: 'https://riverstonewellness.ca/wp-content/uploads/2022/02/when-to-see-a-physiotherapist.jpg',
       name: 'Dr. Corina McCoy',
       role: 'Health Physiotherapist',
     },
     {
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80',
+      image: 'https://assets-002.noviams.com/novi-file-uploads/apta/softr_event_banner_template__1000___600_px___88_.png',
       name: 'Dr. David Elson',
       role: 'Performance Therapist',
     },
     {
-      image: 'https://images.unsplash.com/photo-1559839734-dcd25dcbc547?w=400&q=80',
+      image: 'https://bewellphysio.ie/wp-content/uploads/2024/03/How-To-Prepare-For-Your-Physiotherapy-Session.jpg',
       name: 'Dr. Lisa Wong',
       role: 'Clinical Expert',
     },

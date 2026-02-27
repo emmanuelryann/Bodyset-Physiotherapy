@@ -111,7 +111,7 @@ const Contact = () => {
         {/* Contact Cards */}
         <div className="contact__contact-cards">
           <div className="contact__contact-card">
-            <div className="contact__contact-icon-wrapper contact__contact-icon-wrapper--yellow">
+            <div className="contact__contact-icon-wrapper contact__contact-icon-wrapper--blue">
               <span className="contact__contact-icon"><i className="fa-solid fa-envelope"></i></span>
             </div>
             <div className="contact__contact-info">
@@ -120,7 +120,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="contact__contact-card">
-            <div className="contact__contact-icon-wrapper contact__contact-icon-wrapper--yellow">
+            <div className="contact__contact-icon-wrapper contact__contact-icon-wrapper--blue">
               <span className="contact__contact-icon"><i className="fa-solid fa-phone"></i></span>
             </div>
             <div className="contact__contact-info">
@@ -129,7 +129,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="contact__contact-card">
-            <div className="contact__contact-icon-wrapper contact__contact-icon-wrapper--yellow">
+            <div className="contact__contact-icon-wrapper contact__contact-icon-wrapper--blue">
               <span className="contact__contact-icon"><i className="fa-solid fa-location-dot"></i></span>
             </div>
             <div className="contact__contact-info">

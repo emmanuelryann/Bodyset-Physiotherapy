@@ -12,11 +12,13 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   color: #2d2d2d;
   line-height: 1.6;
+  font-size: var(--fs-body);
   overflow-x: hidden;
   /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
 }
 
 body.no-scroll {
@@ -58,14 +60,10 @@ select {
 /* ===== CSS Custom Properties ===== */
 :root {
   /* Colors */
-  --clr-green-dark: #1a3c2a;
-  --clr-green-mid: #2d6a4f;
-  --clr-green-light: #92aea1;
-  --clr-green-very-light: #e4ece7;
-  --clr-lemon: #a2e39c;
-  --clr-yellow: #e8c840;
-  --clr-yellow-hover: #d4b535;
-  --clr-cream: #f5f0e8;
+  --clr-blue-dark: #1B365D;
+  --clr-blue-mid: #3572B0;
+  --clr-blue-soft: #E1EBF5;
+  --clr-blue-very-light: #F0F5F9;
   --clr-white: #ffffff;
   --clr-text: #2d2d2d;
   --clr-text-light: #414141;
@@ -73,7 +71,8 @@ select {
 
   /* Typography */
   --ff-heading: 'Outfit', sans-serif;
-  --ff-body: 'DM Sans', 'Segoe UI', sans-serif;
+  --ff-body: 'Inter', 'Segoe UI', sans-serif;
+  --fs-body: clamp(0.8rem, 1vw, 1.15rem);
 
   /* Section Spacing */
   --section-py: clamp(3rem, 6vw, 7rem);
@@ -94,7 +93,7 @@ select {
   font-size: clamp(1.75rem, 3vw, 3rem);
   font-weight: 700;
   line-height: 1.2;
-  color: var(--clr-green-dark);
+  color: var(--clr-blue-dark);
   margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
@@ -114,17 +113,25 @@ select {
   font-family: var(--ff-body);
   /* font-size: clamp(0.85rem, 1.2vw, 1rem); */
   font-weight: 600;
-  font-size: clamp(0.8rem, 1vw, 0.9rem);
-  padding: clamp(0.5rem, 0.8vw, 0.75rem) clamp(1rem, 1.8vw, 1.5rem);
+  font-size: var(--fs-body);
+  padding: clamp(0.7rem, 0.8vw, 0.85rem) clamp(1.25rem, 1.8vw, 1.75rem);
   border-radius: 0.4rem;
-  background-color: var(--clr-yellow);
-  color: var(--clr-green-dark);
+  background-color: var(--clr-blue-dark);
+  color: var(--clr-white);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-primary:hover {
-  background-color: var(--clr-yellow-hover);
-  transform: translateY(-0.125rem);
+@media (hover: hover) {
+  .btn-primary:hover {
+    background-color: var(--clr-blue-mid);
+    transform: translateY(-0.125rem);
+  }
+}
+
+/* Re-add focus-visible for keyboard accessibility */
+button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--clr-blue-mid);
+  outline-offset: 2px;
 }
 
 .btn-outline {
@@ -133,7 +140,7 @@ select {
   justify-content: center;
   gap: 0.5rem;
   font-family: var(--ff-body);
-  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-size: var(--fs-body);
   font-weight: 600;
   padding: clamp(0.7rem, 1.2vw, 1rem) clamp(1.5rem, 2.5vw, 2rem);
   border-radius: 0.5rem;
@@ -143,9 +150,11 @@ select {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-outline:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-0.125rem);
+@media (hover: hover) {
+  .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-0.125rem);
+  }
 }
 
 .reveal {

@@ -68,7 +68,7 @@ const Navbar = () => {
 
           <a
             href="#contact"
-            className="btn-primary"
+            className="btn-primary nav-bar-button"
             onClick={(e) => handleNavClick(e, 'contact')}
           >
             Book Appointment

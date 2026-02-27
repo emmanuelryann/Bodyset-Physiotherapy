@@ -18,11 +18,11 @@
   align-items: center;
   gap: 0.4rem;
   font-family: var(--ff-body);
-  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-size: var(--fs-body);
   font-weight: 600;
-  color: var(--clr-green-mid);
+  color: var(--clr-blue-mid);
   margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
-  background-color: var(--clr-green-very-light);
+  background-color: var(--clr-blue-very-light);
   padding: clamp(0.2rem, 0.4vw, 0.4rem) clamp(0.6rem, 1vw, 0.85rem);
   border-radius: 2rem;
 }
@@ -35,7 +35,6 @@
   margin-bottom: 0;
 }
 
-/* Navigation Arrows */
 .team__nav {
   display: flex;
   gap: 0.6rem;
@@ -56,12 +55,14 @@
 }
 
 .team__nav-btn--active {
-  background-color: var(--clr-yellow);
-  color: var(--clr-green-dark);
+  background-color: var(--clr-blue-mid);
+  color: var(--clr-white);
 }
 
-.team__nav-btn--active:hover {
-  background-color: var(--clr-yellow-hover);
+@media (hover: hover) {
+  .team__nav-btn--active:hover {
+    background-color: var(--clr-blue-dark);
+  }
 }
 
 .team__nav-btn:disabled {
@@ -71,7 +72,6 @@
   color: var(--clr-text-light);
 }
 
-/* Carousel Track */
 .team__track {
   --visible-cards: 4;
   --gap: 1.5rem;
@@ -130,34 +130,60 @@
   font-family: var(--ff-heading);
   font-size: clamp(0.85rem, 1.1vw, 1rem);
   font-weight: 600;
-  color: var(--clr-green-dark);
+  color: var(--clr-blue-dark);
   margin-bottom: 0.15rem;
 }
 
 .team__card-role {
-  font-size: clamp(0.65rem, 0.8vw, 0.75rem);
+  font-size: var(--fs-body);
   color: var(--clr-text-light);
 }
 
-@media (max-width: 64rem) {
-  .team__track {
-    --visible-cards: 3;
-  }
-}
-
 @media (max-width: 48rem) {
-  .team__header-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
+  .team__card-image-wrapper {
+    height: 30rem;
   }
   
+  .team__header-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .team__header-text {
+    display: contents;
+  }
+
+  .team__label {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0;
+    width: fit-content;
+  }
+
+  .team__nav {
+    grid-column: 2;
+    grid-row: 1;
+    padding-bottom: 0;
+  }
+
+  .team__heading {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
   .team__track {
     --visible-cards: 2;
   }
 }
 
 @media (max-width: 30rem) {
+  .team__card-image-wrapper {
+    height: clamp(22rem, 90vw, 35rem);
+  }
+
   .team__track {
     --visible-cards: 1;
   }

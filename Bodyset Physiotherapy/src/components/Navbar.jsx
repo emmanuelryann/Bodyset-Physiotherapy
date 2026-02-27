@@ -34,7 +34,7 @@ const Navbar = () => {
     setTimeout(() => {
       const target = document.getElementById(targetId)
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth' })
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
     }, 100)
   }

@@ -23,6 +23,7 @@ body {
 
 body.no-scroll {
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 img {
@@ -86,6 +87,7 @@ select {
   margin-inline: auto;
   padding-block: var(--section-py);
   padding-inline: var(--section-px);
+  scroll-margin-top: clamp(4rem, 10vh, 6rem);
 }
 
 .section-heading {

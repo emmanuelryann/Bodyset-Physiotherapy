@@ -25,7 +25,6 @@
   font-size: clamp(0.6rem, 0.8vw, 0.75rem);
 }
 
-/* Carousel Track */
 .testimonials__track {
   display: flex;
   overflow-x: auto;
@@ -39,7 +38,6 @@
   display: none;
 }
 
-/* Wide Layout Card */
 .testimonials__card {
   flex: 0 0 100%;
   scroll-snap-align: start;
@@ -104,7 +102,6 @@
   margin-bottom: clamp(1.5rem, 2.5vw, 2rem);
 }
 
-/* Author and Nav Row */
 .testimonials__author-row {
   display: flex;
   justify-content: space-between;
@@ -139,7 +136,6 @@
   color: var(--clr-text-light);
 }
 
-/* Navigation Arrows */
 .testimonials__nav {
   display: flex;
   gap: 0.6rem;

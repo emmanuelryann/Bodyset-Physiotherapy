@@ -71,16 +71,11 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  /* background-color: rgba(255, 255, 255, 0.05); */
   padding: clamp(1rem, .5vw, 1.5rem) clamp(1rem, 1.5vw, 1.5rem);
   border-radius: 0.5rem;
   border: 0.0625rem solid rgba(255, 255, 255, 0.08);
   transition: background-color 0.3s ease;
 }
-
-/* .process__step:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-} */
 
 .process__step-icon-wrapper {
   flex-shrink: 0;
@@ -112,28 +107,6 @@
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.6;
 }
-
-/* Active style (white box) */
-/* .process__step--active {
-  background-color: var(--clr-white);
-  border-color: var(--clr-white);
-}
-
-.process__step--active .process__step-icon-wrapper {
-  background-color: var(--clr-yellow);
-}
-
-.process__step--active .process__step-icon {
-  color: var(--clr-blue-dark);
-}
-
-.process__step--active .process__step-title {
-  color: var(--clr-blue-dark);
-}
-
-.process__step--active .process__step-text {
-  color: var(--clr-text-light);
-} */
 
 @media (max-width: 60rem) {
   .process__grid {

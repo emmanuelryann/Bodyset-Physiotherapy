@@ -21,7 +21,6 @@
   align-items: center;
 }
 
-/* Left Column */
 .contact__left {
   flex: 1 1 45%;
 }
@@ -61,13 +60,11 @@
   margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
 
-/* Schedule Table */
 .contact__schedule {
   background-color: var(--clr-white);
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.05);
-  /* padding: clamp(0.8rem, 1.5vw, 1.1rem) clamp(1.25rem, 1.5vw, 1.75rem); */
 }
 
 .contact__schedule-header {
@@ -98,7 +95,6 @@
   border-bottom: none;
 }
 
-/* Right Column - Form Card */
 .contact__right {
   flex: 1 1 45%;
 }
@@ -199,7 +195,6 @@
   padding: clamp(0.75rem, 1vw, 0.85rem) clamp(1rem, 1.8vw, 1.5rem);
 }
 
-/* Contact Cards */
 .contact__contact-cards {
   display: flex;
   flex-wrap: wrap;
@@ -233,10 +228,6 @@
   background-color: var(--clr-blue-mid);
 }
 
-/* .contact__contact-icon-wrapper--white {
-  background-color: var(--clr-white);
-} */
-
 .contact__contact-icon {
   font-size: clamp(1.1rem, 1.5vw, 1.3rem);
   color: var(--clr-white);
@@ -260,7 +251,6 @@
   line-height: 1.4;
 }
 
-/* Responsive */
 @media (max-width: 48rem) {
   .contact__grid {
     flex-direction: column;

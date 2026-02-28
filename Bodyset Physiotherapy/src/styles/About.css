@@ -78,7 +78,6 @@
   color: var(--clr-text);
 }
 
-/* Right Column - Images */
 .about__images-col {
   flex: 1 1 50%;
   display: flex;

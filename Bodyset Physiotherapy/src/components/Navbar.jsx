@@ -15,11 +15,24 @@ const Navbar = () => {
 
   useEffect(() => {
     if (sidebarOpen) {
+      document.documentElement.classList.add('no-scroll')
       document.body.classList.add('no-scroll')
-    } else {
-      document.body.classList.remove('no-scroll')
+
+      // Touch Interceptor to prevent background scroll leak on mobile
+      const preventDefault = (e) => {
+        // If the touch is NOT inside the sidebar, kill the gesture
+        if (!e.target.closest('.navbar__sidebar')) {
+          if (e.cancelable) e.preventDefault()
+        }
+      }
+
+      document.addEventListener('touchmove', preventDefault, { passive: false })
+      return () => {
+        document.removeEventListener('touchmove', preventDefault)
+        document.documentElement.classList.remove('no-scroll')
+        document.body.classList.remove('no-scroll')
+      }
     }
-    return () => document.body.classList.remove('no-scroll')
   }, [sidebarOpen])
 
   const toggleSidebar = () => setSidebarOpen(prev => !prev)

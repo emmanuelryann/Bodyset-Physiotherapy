@@ -21,8 +21,10 @@ body {
   /* -moz-osx-font-smoothing: grayscale; */
 }
 
+html.no-scroll,
 body.no-scroll {
   overflow: hidden;
+  height: 100%;
   overscroll-behavior: none;
 }
 
@@ -87,8 +89,23 @@ select {
   margin-inline: auto;
   padding-block: var(--section-py);
   padding-inline: var(--section-px);
-  scroll-margin-top: clamp(4rem, 10vh, 6rem);
 }
+
+/* Navigation Offsets */
+#hero,
+#about,
+#services,
+#testimonials,
+#blog,
+#process,
+#team {
+  scroll-margin-top: clamp(5rem, 8vh, 7rem);
+}
+
+#contact {
+  scroll-margin-top: clamp(10rem, 15vh, 12rem);
+}
+
 
 .section-heading {
   font-family: var(--ff-heading);
@@ -113,7 +130,6 @@ select {
   justify-content: center;
   gap: 0.5rem;
   font-family: var(--ff-body);
-  /* font-size: clamp(0.85rem, 1.2vw, 1rem); */
   font-weight: 600;
   font-size: var(--fs-body);
   padding: clamp(0.7rem, 0.8vw, 0.85rem) clamp(1.25rem, 1.8vw, 1.75rem);

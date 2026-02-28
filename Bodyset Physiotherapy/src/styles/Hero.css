@@ -24,7 +24,6 @@
   );
 }
 
-/* Decorative elements */
 .hero__decoration {
   position: absolute;
   z-index: 1;

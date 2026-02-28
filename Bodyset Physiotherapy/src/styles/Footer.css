@@ -1,13 +1,11 @@
 .footer {
   background-color: var(--clr-blue-very-light);
   color: var(--clr-text);
-  /* padding-top: clamp(4rem, 8vw, 6rem); */
 }
 
 .footer__container {
   margin-inline: auto;
   padding-top: clamp(1rem, 3vw, 7rem);
-  /* padding-bottom: 0; */
   padding-inline: clamp(1rem, 7vw, 8rem);
 }
 
@@ -19,7 +17,6 @@
   border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.08);
 }
 
-/* Col 1: Brand */
 .footer__logo {
   display: inline-flex;
   align-items: center;
@@ -78,7 +75,6 @@
   margin-bottom: clamp(1.25rem, 2.5vw, 1.5rem);
 }
 
-/* Col 2: Hours Table */
 .footer__hours-table {
   background-color: var(--clr-blue-very-light);
   border-radius: 0.5rem;
@@ -112,7 +108,6 @@
   color: var(--clr-text-light);
 }
 
-/* Col 3: Links */
 .footer__nav {
   display: flex;
   flex-direction: column;
@@ -131,7 +126,6 @@
   }
 }
 
-/* Col 4: Contact */
 .footer__contact {
   display: flex;
   flex-direction: column;
@@ -151,7 +145,6 @@
   color: var(--clr-text-light);
 }
 
-/* Bottom Bar */
 .footer__bottom {
   display: flex;
   justify-content: space-between;

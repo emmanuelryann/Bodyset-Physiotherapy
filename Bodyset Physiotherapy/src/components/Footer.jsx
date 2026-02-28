@@ -1,4 +1,5 @@
 import '../styles/Footer.css'
+import logo from '../assets/logo-transparent.png'
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           {/* Column 1: Brand & Socials */}
           <div className="footer__col footer__col--brand">
             <div className="footer__logo">
-              <span className="footer__logo-icon"><i className="fa-solid fa-leaf"></i></span>
+              <img src={logo} alt="Bodyset Logo" className="footer__logo-img" />
               <span className="footer__logo-text">Bodyset</span>
             </div>
             <p className="footer__tagline">

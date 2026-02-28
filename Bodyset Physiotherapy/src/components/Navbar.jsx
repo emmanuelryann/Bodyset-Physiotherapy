@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import '../styles/Navbar.css'
+import logo from '../assets/logo-transparent.png'
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -18,9 +19,7 @@ const Navbar = () => {
       document.documentElement.classList.add('no-scroll')
       document.body.classList.add('no-scroll')
 
-      // Touch Interceptor to prevent background scroll leak on mobile
       const preventDefault = (e) => {
-        // If the touch is NOT inside the sidebar, kill the gesture
         if (!e.target.closest('.navbar__sidebar')) {
           if (e.cancelable) e.preventDefault()
         }
@@ -42,8 +41,6 @@ const Navbar = () => {
     e.preventDefault()
     closeSidebar()
     
-    // Small delay to allow 'no-scroll' class to be removed from body 
-    // before the browser attempts to calculate scroll position
     setTimeout(() => {
       const target = document.getElementById(targetId)
       if (target) {
@@ -66,7 +63,7 @@ const Navbar = () => {
       <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
         <div className="navbar__container">
           <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="navbar__logo">
-            <span className="navbar__logo-icon"><i className="fa-solid fa-leaf"></i></span>
+            <img src={logo} alt="Bodyset Logo" className="navbar__logo-img" />
             <span className="navbar__logo-text">Bodyset</span>
           </a>
 

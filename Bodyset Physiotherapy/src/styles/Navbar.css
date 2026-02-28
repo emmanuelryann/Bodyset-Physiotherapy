@@ -29,9 +29,10 @@
   gap: 0.5rem;
 }
 
-.navbar__logo-icon {
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  color: var(--clr-white);
+.navbar__logo-img {
+  height: clamp(2rem, 4.5vw, 3rem);
+  width: auto;
+  object-fit: contain;
 }
 
 .navbar__logo-text {

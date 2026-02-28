@@ -28,8 +28,10 @@
   margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
-.footer__logo-icon {
-  color: var(--clr-blue-mid);
+.footer__logo-img {
+  height: clamp(2rem, 4.5vw, 3rem);
+  width: auto;
+  object-fit: contain;
 }
 
 .footer__tagline {
